@@ -8,5 +8,7 @@ int main(int argc, char const *argv[]) {
   cin>>ch;
   cout<<"Over"<<endl;
   cin>>ch;
+  cout<<"Not Over"<<endl;
+  cin>>ch;
   return 0;
 }
