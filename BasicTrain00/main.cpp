@@ -2,13 +2,13 @@
 #include <list>
 using namespace std;
 
-void InsertSort(list<int>* input， list<int>* output);
+int InsertSort(list<int>* input, list<int>* output);
 
 // 排序
-void Sort()
+int Sort()
 {
   list<int>* inputNumSet = new list<int>();
-  list<int>* outputNumSet = new list<int>()；
+  list<int>* outputNumSet = new list<int>();
 
   cout<<"Mirage***排序练习****"<<endl;
   cout<<"请输入10个数字：";
@@ -17,28 +17,32 @@ void Sort()
   {
     int num = 0;
     cin>>num;
-    inputNumSet->Add(num)
+    inputNumSet->push_back(num);
   }
 
-  InsertSort();
+  InsertSort(inputNumSet, outputNumSet);
 
-  cout<<"排序后生成的序列："；
-  for(int i=0; i<10; i++)
+  cout<<"排序后生成的序列：";
+  for (list<int>::iterator i = outputNumSet->begin(); i != outputNumSet->end(); ++i)
   {
-    cout<<outputNumSet[i]<<" < ";
+    cout<< *i <<" < ";
   }
 
   delete inputNumSet;
   delete outputNumSet;
+  return 0;
 }
 
 // 插入排序
-void InsertSort(list<int>* input， list<int>* output)
+int InsertSort(list<int>* input, list<int>* output)
 {
-  for (int i = 0; i < 10; i++) {
+  for (list<int>::iterator i = input->begin(); i != input->end(); ++i)
+  {
     /* code */
-    output[i] = input[i];
+    output->push_back(*i);
   }
+  output->sort();
+  return 0;
 }
 
 /*主程序入口*/
@@ -46,6 +50,7 @@ int main(int argc, char const *argv[]) {
   /* code */
   Sort();
 
+  char ch;
   cin>>ch;
   return 0;
 }
