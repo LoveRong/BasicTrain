@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <list>
 using namespace std;
 
@@ -11,7 +11,7 @@ int Sort()
   list<int>* outputNumSet = new list<int>();
 
   cout<<"Mirage***排序练习****"<<endl;
-  cout<<"请输入10个数字：";
+  cout<<"请输入10个数字123：";
 
   for(int i=0; i<10; i++)
   {
@@ -22,7 +22,7 @@ int Sort()
 
   InsertSort(inputNumSet, outputNumSet);
 
-  cout<<"排序后生成的序列：";
+  cout<<"排序后生成的序列: ";
   for (list<int>::iterator i = outputNumSet->begin(); i != outputNumSet->end(); ++i)
   {
     cout<< *i <<" < ";
@@ -45,12 +45,10 @@ int InsertSort(list<int>* input, list<int>* output)
   return 0;
 }
 
-/*主程序入口*/
 int main(int argc, char const *argv[]) {
-  /* code */
   Sort();
 
   char ch;
-  cin>>ch;
+  cin >> ch;
   return 0;
 }
